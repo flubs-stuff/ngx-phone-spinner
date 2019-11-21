@@ -4,6 +4,8 @@
 [![npm](https://img.shields.io/npm/dt/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner)
 [![npm](https://img.shields.io/npm/dm/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner)
 
+![](src/assets/images/example.gif)
+
 ## Index ##
 
 * [About](#about)
