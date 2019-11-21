@@ -10,7 +10,8 @@ export class AppComponent {
     title = 'mat-increments';
 
     form: FormGroup;
-    value: number = 0;
+    value: string = '2055550786';
+
     constructor(private fb: FormBuilder) {
         this.form = this.fb.group({
             price: 11
@@ -21,7 +22,7 @@ export class AppComponent {
         alert(JSON.stringify(this.form.value));
     }
 
-    change(value: number) {
+    change(value: string) {
         this.value = value;
     }
 }

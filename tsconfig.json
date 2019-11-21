@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-number-spin": [
-        "dist/ngx-number-spin"
+      "ngx-bad-phone-spinner": [
+        "dist/ngx-bad-phone-spinner"
       ],
-      "ngx-number-spin/*": [
-        "dist/ngx-number-spin/*"
+      "ngx-bad-phone-spinner/*": [
+        "dist/ngx-bad-phone-spinner/*"
       ]
     }
   }

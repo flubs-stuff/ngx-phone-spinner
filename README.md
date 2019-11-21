@@ -1,4 +1,4 @@
-# ngx-number-spin
+# ngx-bad-phone-spinner
 
 This is an angular number spinner component.
 
@@ -6,7 +6,7 @@ This is an angular number spinner component.
 
 To install this library (component), run:
 ```bash
-$ npm i ngx-number-spin --save
+$ npm i ngx-bad-phone-spinner --save
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import this library
-import { NgxNumberSpinModule } from 'ngx-number-spin';
+import { NgxBadPhoneSpinnerModule } from 'ngx-bad-phone-spinner';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { NgxNumberSpinModule } from 'ngx-number-spin';
     BrowserModule,
     
     // Specify this library as an import
-    NgxNumberSpinModule,
+    NgxBadPhoneSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -50,38 +50,38 @@ export class AppComponent {
 
 ##### With validation 'MIN' value (min=1)
 ```html
-<ngx-number-spin
-    [value]="4"
+<ngx-bad-phone-spinner
+    [digits]="4"
     (change)="change($event)" 
     [min]="1">
-</ngx-number-spin>
+</ngx-bad-phone-spinner>
 ```
 
 ##### With validation 'MAX' value (min=9)
 ```html
-<ngx-number-spin 
-    [value]="4"
+<ngx-bad-phone-spinner 
+    [digits]="4"
     (change)="change($event)" 
     [max]="9">
-</ngx-number-spin>
+</ngx-bad-phone-spinner>
 ```
 
 ##### With validation 'MIN' and 'MAX' value (min=1, max=9)
 ```html
-<ngx-number-spin 
-    [value]="4"
+<ngx-bad-phone-spinner 
+    [digits]="4"
     (change)="change($event)"
     [min]="1"
     [max]="9">
-</ngx-number-spin>
+</ngx-bad-phone-spinner>
 ```
 
 ##### With 'STEP' (step=5)
 ```html
-<ngx-number-spin
+<ngx-bad-phone-spinner
     (change)="change($event)" 
     [step]="5">
-</ngx-number-spin>
+</ngx-bad-phone-spinner>
 ```
 --------------------------------------------------------------------------------------------------------------------
 ### Form Example
@@ -106,7 +106,7 @@ export class AppComponent {
 ```html
 <form [formGroup]="form" (submit)="submit()">
 
-    <ngx-number-spin formControlName="price" [min]="1" [max]="9"></ngx-number-spin>
+    <ngx-bad-phone-spinner formControlName="price" [min]="1" [max]="9"></ngx-bad-phone-spinner>
     
     <button type="submit">submit</button>
     
@@ -127,5 +127,5 @@ export class AppComponent {
 
 -------------------------------------------------------------------------------------------------------
 
-![ngx-number-spin example image](/src/assets/images/example.png "ngx-number-spin example image")
+![ngx-bad-phone-spinner example image](/src/assets/images/example.png "ngx-bad-phone-spinner example image")
 

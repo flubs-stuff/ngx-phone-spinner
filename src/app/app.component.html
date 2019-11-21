@@ -1,39 +1,12 @@
-<h1>Standalone Examples</h1>
+<h1>ngx-bad-phone-spinner</h1>
 
-<p style="margin-top:2rem">Vertical</p>
-<ngx-number-spin
-    [value]="4"
-    (change)="change($event)"
-    [direction]="'vertical'"
-    [max]="9">
-</ngx-number-spin>
+<h4 style="margin-left: 10px;">
+  Enter your phone number:
+</h4>
 
-<p style="margin-top:2rem">With validation <b>'MIN'</b> and <b>'MAX'</b>value (min=1, max=9)</p>
-<ngx-number-spin
-    [value]="4"
-    (change)="change($event)"
-    [min]="1"
-    [max]="9">
-</ngx-number-spin>
-
-<p style="margin-top:2rem">With <b>'STEP'</b> (step=5)</p>
-<ngx-number-spin
-    (change)="change($event)"
-    [step]="5">
-</ngx-number-spin>
-<br>
-<hr>
-
-<h1>Form Example</h1>
-
-<form [formGroup]="form" (submit)="submit()">
-    <ngx-number-spin formControlName="price" [min]="1" [max]="9"></ngx-number-spin>
-    <button type="submit" style="margin-top:20px">submit</button>
-</form>
-
-
-<p>Form value in json</p>
-
-<pre> {{ form.value | json }}</pre>
+<ngx-bad-phone-spinner
+    [number]="value"
+    (change)="change($event)">
+</ngx-bad-phone-spinner>
 
 

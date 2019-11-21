@@ -1,6 +1,6 @@
 {
-  "name": "ngx-number-spin",
-  "version": "0.0.4",
+  "name": "ngx-bad-phone-spinner",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "An Angular number spin component",
   "keywords": [
@@ -9,13 +9,13 @@
     "angular",
     "number",
     "spin",
-    "ngx-number-spin",
+    "ngx-bad-phone-spinner",
     "angular number spin component"
   ],
-  "author": "mandhu <mandhu305@gmail.com>",
+  "author": "Jeremy Quick <me@jrquick.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mandhu/ngx-number-spin.git"
+    "url": "git+https://github.com/jrquick17/ngx-bad-phone-spinner.git"
   },
   "peerDependencies": {
     "@angular/common": "^7.2.0",

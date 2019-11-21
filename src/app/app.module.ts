@@ -1,5 +1,5 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxNumberSpinModule } from 'ngx-number-spin';
+import { NgxBadPhoneSpinnerModule } from 'ngx-bad-phone-spinner';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,10 +12,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
-    NgxNumberSpinModule
+    NgxBadPhoneSpinnerModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
