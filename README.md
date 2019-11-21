@@ -1,16 +1,34 @@
 # ngx-bad-phone-spinner
 
-This is an angular number spinner component.
+[![npm](https://img.shields.io/npm/l/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner/)
+[![npm](https://img.shields.io/npm/dt/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner)
+[![npm](https://img.shields.io/npm/dm/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner)
 
-## Installation
+## Index ##
+
+* [About](#about)
+* [Setup](#setup)
+* [Documentation](#documentation)
+* [Issues](#issues)
+* [Contributing](#contributing)
+
+## About ## 
+
+This is a bad phone number picker for Angular 2+ and Ionic 2+. 
+
+* Try out [the demo](https://ngx-bad-phone-spinner.jrquick.com) to see it in action!
+* Checkout my other Ionic/Angular projects: [ionic4-tooltips](https://github.com/jrquick17/ionic4-tooltips) and [ionic4-auto-complete](https://github.com/jrquick17/ionic4-auto-complete)!
+* Visit [my website](https://jrquick.com) for other cool projects!
+
+## Setup ##
 
 To install this library (component), run:
 ```bash
 $ npm i ngx-bad-phone-spinner --save
 ```
 
-## Usage
-add NumberPickerModule to `AppModule`
+## Documentation ##
+Add NumberPickerModule to `AppModule`
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,84 +66,32 @@ export class AppComponent {
 }
 ```
 
-##### With validation 'MIN' value (min=1)
 ```html
 <ngx-bad-phone-spinner
-    [digits]="4"
-    (change)="change($event)" 
-    [min]="1">
+    [number]="mobile"
+    (change)="change($event)">
 </ngx-bad-phone-spinner>
 ```
 
-##### With validation 'MAX' value (min=9)
-```html
-<ngx-bad-phone-spinner 
-    [digits]="4"
-    (change)="change($event)" 
-    [max]="9">
-</ngx-bad-phone-spinner>
-```
-
-##### With validation 'MIN' and 'MAX' value (min=1, max=9)
-```html
-<ngx-bad-phone-spinner 
-    [digits]="4"
-    (change)="change($event)"
-    [min]="1"
-    [max]="9">
-</ngx-bad-phone-spinner>
-```
-
-##### With 'STEP' (step=5)
-```html
-<ngx-bad-phone-spinner
-    (change)="change($event)" 
-    [step]="5">
-</ngx-bad-phone-spinner>
-```
---------------------------------------------------------------------------------------------------------------------
-### Form Example
-```typescript
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-
-export class AppComponent {
-    form: FormGroup;
-    
-    constructor(private fb: FormBuilder) {
-        this.form = this.fb.group({
-            price: 11
-        });
-    }
-       
-    submit() {
-        alert(JSON.stringify(this.form.value));
-    }
-}
-```
-
-```html
-<form [formGroup]="form" (submit)="submit()">
-
-    <ngx-bad-phone-spinner formControlName="price" [min]="1" [max]="9"></ngx-bad-phone-spinner>
-    
-    <button type="submit">submit</button>
-    
-</form>
-
-```
 --------------------------------------------------------------------------------------------
 ### Component Inputs and Outputs
 | Attribute        | Type           | Required  | Default | Description |
 | :------------- |:-------------| :-----:| :----| :-----|
-| value | [input] number | No | 0 | initial value for the spinner |
-| min | [input] number | No | null | limit the minimal number |
-| max | [input] number | No | null | limit the maximum number |
-| spin | [input] number | No | 1 | increment or decrement by current number  |
-| vertical | [input] vertical|horizontal | No | horizontal | change the direction of the buttons |
+| number | [input] string | No | 0000000000 | initial value for the spinner |
 | (change) | (output) number | no | - | emits the value of the current number, every time the user clicks the - or + button |
 
 
 -------------------------------------------------------------------------------------------------------
 
-![ngx-bad-phone-spinner example image](/src/assets/images/example.png "ngx-bad-phone-spinner example image")
+## Issues ##
 
+If you find any issues feel free to open a request in [the Issues tab](https://github.com/jrquick17/ngx-bad-phone-spinner/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
+
+### Demo ###
+
+Run `npm install` to get packages required for the demo and then run `ionic serve` to run locally.
+
+### Thanks ###
+
+* [mandhu](https://github.com/mandhu)
+* [jrquick17](https://github.com/jrquick17)
