@@ -14,7 +14,7 @@
 
 ## About ## 
 
-This is a bad phone number picker for Angular 2+ and Ionic 2+. 
+This is a bad phone number picker for Angular 2+. 
 
 * Try out [the demo](https://ngx-bad-phone-spinner.jrquick.com) to see it in action!
 * Checkout my other Ionic/Angular projects: [ionic4-tooltips](https://github.com/jrquick17/ionic4-tooltips) and [ionic4-auto-complete](https://github.com/jrquick17/ionic4-auto-complete)!
