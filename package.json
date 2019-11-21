@@ -1,6 +1,7 @@
 {
   "name": "ngx-bad-phone-spinner",
   "version": "1.0.0",
+  "readme": "README.md",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
