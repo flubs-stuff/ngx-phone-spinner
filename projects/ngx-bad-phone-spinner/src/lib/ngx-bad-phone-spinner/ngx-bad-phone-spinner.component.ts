@@ -72,6 +72,10 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
           Math.random() * 1000 * 60
         );
       }
+
+      if (this.options.unlocks === 'ignore' && Math.random() < 0.5) {
+        this.locks[i] = false;
+      }
     } else {
       if (this.options.locks === 'random') {
         setTimeout(
@@ -80,6 +84,10 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
           },
           Math.random() * 1000 * 60
         );
+      }
+
+      if (this.options.unlocks === 'ignore' && Math.random() < 0.5) {
+        this.locks[i] = true;
       }
     }
 
