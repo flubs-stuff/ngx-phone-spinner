@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { NgxBadPhoneSpinnerOptions } from '../../projects/ngx-bad-phone-spinner/src/lib/ngx-bad-phone-spinner.model';
+import {LockOptions, NgxBadPhoneSpinnerOptions} from '../../projects/ngx-bad-phone-spinner/src/lib/ngx-bad-phone-spinner.model';
 
 @Component({
   selector:    'app-root',
@@ -21,8 +21,16 @@ export class AppComponent {
     this.badOptions = new NgxBadPhoneSpinnerOptions();
 
     this.badderOptions = new NgxBadPhoneSpinnerOptions();
-    this.badderOptions.locks = 'random';
-    this.badderOptions.unlocks = 'random';
+
+    this.badderOptions.locks = [
+      LockOptions.IGNORE,
+      LockOptions.RANDOM
+    ];
+
+    this.badderOptions.unlocks = [
+      LockOptions.IGNORE,
+      LockOptions.RANDOM
+    ];
   }
 
   submit():void {

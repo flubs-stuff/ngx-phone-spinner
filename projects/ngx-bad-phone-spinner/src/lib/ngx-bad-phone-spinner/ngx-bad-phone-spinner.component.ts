@@ -1,7 +1,7 @@
-import { Component, Input, EventEmitter, Output, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {Component, EventEmitter, forwardRef, Input, Output} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
-import { NgxBadPhoneSpinnerOptions } from '../ngx-bad-phone-spinner.model';
+import {LockOptions, NgxBadPhoneSpinnerOptions} from '../ngx-bad-phone-spinner.model';
 
 @Component({
   selector:    'ngx-bad-phone-spinner',
@@ -64,7 +64,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     this.locks[i] = !this.locks[i];
 
     if (this.locks[i]) {
-      if (this.options.unlocks === 'random') {
+      if (this.options.unlocks.indexOf(LockOptions.RANDOM) !== -1) {
         setTimeout(
           () => {
             this.locks[i] = false;
@@ -73,11 +73,11 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
         );
       }
 
-      if (this.options.unlocks === 'ignore' && Math.random() < 0.5) {
+      if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
         this.locks[i] = false;
       }
     } else {
-      if (this.options.locks === 'random') {
+      if (this.options.locks.indexOf(LockOptions.RANDOM) !== -1) {
         setTimeout(
           () => {
             this.locks[i] = true;
@@ -86,7 +86,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
         );
       }
 
-      if (this.options.unlocks === 'ignore' && Math.random() < 0.5) {
+      if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
         this.locks[i] = true;
       }
     }

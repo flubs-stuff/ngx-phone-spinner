@@ -1,4 +1,15 @@
 export class NgxBadPhoneSpinnerOptions {
-  public locks:'manual'|'random'|'ignore' = 'manual';
-  public unlocks:'manual'|'random'|'ignore' = 'manual';
+  public locks:LockOptions[] = [
+    LockOptions.MANUAL
+  ];
+
+  public unlocks:LockOptions[] = [
+    LockOptions.MANUAL
+  ];
+}
+
+export enum LockOptions {
+  IGNORE = 'ignore',
+  MANUAL = 'manual',
+  RANDOM = 'random',
 }
