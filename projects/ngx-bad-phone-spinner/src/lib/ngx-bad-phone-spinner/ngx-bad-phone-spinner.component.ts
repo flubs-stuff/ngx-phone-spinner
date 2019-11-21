@@ -1,8 +1,10 @@
 import { Component, Input, EventEmitter, Output, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+import { NgxBadPhoneSpinnerOptions } from '../ngx-bad-phone-spinner.model';
+
 @Component({
-  selector:  'ngx-bad-phone-spinner',
+  selector:    'ngx-bad-phone-spinner',
   templateUrl: './ngx-bad-phone-spinner.component.html',
   styleUrls: [
     './ngx-bad-phone-spinner.component.scss'
@@ -16,46 +18,70 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
-  @Output('change') change: EventEmitter<string> = new EventEmitter();
+  @Input('options') options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
 
   @Input('number')
-  set number(digits: string) {
+  set number(digits:string) {
     const candidates = digits.split('');
 
     for (let i = 0; i < 10; i++) {
-      this.digits[i] = typeof candidates[i] !== 'undefined' ? parseInt(candidates[i], 10) : 0;
+      this.digits[i] = typeof candidates[i] !== 'undefined' ? parseInt(candidates[i], 10) :0;
     }
   }
 
-  fullNumber: string = '0000000000';
-  digits: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  locks: boolean[] = [false, false, false, false, false, false, false, false, false, false];
+  @Output('change') change:EventEmitter<string>;
 
-  disabled: boolean;
+  public fullNumber:string = '0000000000';
+  public digits:number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
 
-  _propagateChange:any = () => {};
-  _onTouched: () => void;
+  public disabled:boolean;
 
-  constructor() { }
+  private _propagateChange:any = () => {};
+  private _onTouched:() => void;
 
-  writeValue(value: string): void {
+  constructor() {
+    this.change = new EventEmitter<string>();
+  }
+
+  writeValue(value:string):void {
     this.fullNumber = value || '0000000000';
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn:any):void {
     this._propagateChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn:any):void {
     this._onTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
+  setDisabledState?(isDisabled:boolean):void {
     this.disabled = isDisabled;
   }
 
   toggleLock(i:number):void {
     this.locks[i] = !this.locks[i];
+
+    if (this.locks[i]) {
+      if (this.options.unlocks === 'random') {
+        setTimeout(
+          () => {
+            this.locks[i] = false;
+          },
+          Math.random() * 1000 * 60
+        );
+      }
+    } else {
+      if (this.options.locks === 'random') {
+        setTimeout(
+          () => {
+            this.locks[i] = true;
+          },
+          Math.random() * 1000 * 60
+        );
+      }
+    }
 
     this._onChange();
   }

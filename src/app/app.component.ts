@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+
+import { NgxBadPhoneSpinnerOptions } from '../../projects/ngx-bad-phone-spinner/src/lib/ngx-bad-phone-spinner.model';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+  selector:    'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: [
+    './app.component.scss'
+  ]
 })
 export class AppComponent {
-    title = 'mat-increments';
+  public title:string = 'NgxBadPhoneSpinner';
 
-    form: FormGroup;
-    value: string = '2055550786';
+  public value:string = '2055550786';
 
-    constructor(private fb: FormBuilder) {
-        this.form = this.fb.group({
-            price: 11
-        });
-    }
+  public badOptions:NgxBadPhoneSpinnerOptions;
+  public badderOptions:NgxBadPhoneSpinnerOptions;
 
-    submit() {
-        alert(JSON.stringify(this.form.value));
-    }
+  constructor() {
+    this.badOptions = new NgxBadPhoneSpinnerOptions();
 
-    change(value: string) {
-        this.value = value;
-    }
+    this.badderOptions = new NgxBadPhoneSpinnerOptions();
+    this.badderOptions.locks = 'random';
+    this.badderOptions.unlocks = 'random';
+  }
+
+  submit():void {
+    alert(this.value);
+  }
+
+  change(value:string):void {
+    this.value = value;
+  }
 }
