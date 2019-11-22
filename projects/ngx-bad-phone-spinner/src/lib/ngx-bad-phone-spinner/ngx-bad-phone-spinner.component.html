@@ -1,62 +1,21 @@
 <div class="ngx-bad-phone-spinner">
   <div class="inline-label">(</div>
 
-  <div class="wrapper">
-    <div>{{ digits[0] }}</div>
+  <div class="wrapper"
+       *ngFor="let range of [] | range:3; let i = index">
+    <div>{{ digits[i] }}</div>
 
     <button type="button"
             class="ripple"
-            (click)="toggleLock(0)"
-            [ngClass]="{ 'locked': locks[0], 'unlocked': locks[0] }">
-      <span *ngIf="locks[0] === true">
+            (click)="toggleLock(i)"
+            [ngClass]="{ 'locked': locks[i], 'unlocked': locks[i] }">
+      <span *ngIf="locks[i] === true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
           <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
         </svg>
       </span>
 
-      <span *ngIf="locks[0] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <div class="wrapper">
-    <div>{{ digits[1] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(1)"
-            [ngClass]="{ 'locked': locks[1], 'unlocked': locks[1] }">
-      <span *ngIf="locks[1] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[1] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <div class="wrapper">
-    <div>{{ digits[2] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(2)"
-            [ngClass]="{ 'locked': locks[2], 'unlocked': locks[2] }">
-      <span *ngIf="locks[2] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[2] === false">
+      <span *ngIf="locks[i] === false">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
           <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
         </svg>
@@ -66,62 +25,21 @@
 
   <div class="inline-label">)</div>
 
-  <div class="wrapper">
-    <div>{{ digits[3] }}</div>
+  <div class="wrapper"
+       *ngFor="let range of [] | range:3; let i = index">
+    <div>{{ digits[i + 3] }}</div>
 
     <button type="button"
             class="ripple"
-            (click)="toggleLock(3)"
-            [ngClass]="{ 'locked': locks[3], 'unlocked': locks[3] }">
-      <span *ngIf="locks[3] === true">
+            (click)="toggleLock(i + 3)"
+            [ngClass]="{ 'locked': locks[i + 3], 'unlocked': locks[i + 3] }">
+      <span *ngIf="locks[i + 3] === true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
           <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
         </svg>
       </span>
 
-      <span *ngIf="locks[3] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <div class="wrapper">
-    <div>{{ digits[4] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(4)"
-            [ngClass]="{ 'locked': locks[4], 'unlocked': locks[4] }">
-      <span *ngIf="locks[4] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[4] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <div class="wrapper">
-    <div>{{ digits[5] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(5)"
-            [ngClass]="{ 'locked': locks[5], 'unlocked': locks[5] }">
-      <span *ngIf="locks[5] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[5] === false">
+      <span *ngIf="locks[i + 3] === false">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
           <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
         </svg>
@@ -131,90 +49,27 @@
 
   <div class="inline-label">-</div>
 
-  <div class="wrapper">
+  <div class="wrapper"
+       *ngFor="let range of [] | range:4; let i = index">
     <div>{{ digits[6] }}</div>
 
     <button type="button"
             class="ripple"
-            (click)="toggleLock(6)"
-            [ngClass]="{ 'locked': locks[6], 'unlocked': locks[6] }">
-      <span *ngIf="locks[6] === true">
+            (click)="toggleLock(i + 6)"
+            [ngClass]="{ 'locked': locks[i+ 6], 'unlocked': locks[i+ 6] }">
+      <span *ngIf="locks[i+ 6] === true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
           <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
         </svg>
       </span>
 
-      <span *ngIf="locks[6] === false">
+      <span *ngIf="locks[i+ 6] === false">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
           <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
         </svg>
       </span>
     </button>
   </div>
-
-  <div class="wrapper">
-    <div>{{ digits[7] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(7)"
-            [ngClass]="{ 'locked': locks[7], 'unlocked': locks[7] }">
-      <span *ngIf="locks[7] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[7] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <div class="wrapper">
-    <div>{{ digits[8] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(8)"
-            [ngClass]="{ 'locked': locks[8], 'unlocked': locks[8] }">
-      <span *ngIf="locks[8] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[8] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <div class="wrapper">
-    <div>{{ digits[9] }}</div>
-
-    <button type="button"
-            class="ripple"
-            (click)="toggleLock(9)"
-            [ngClass]="{ 'locked': locks[9], 'unlocked': locks[9] }">
-      <span *ngIf="locks[9] === true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>
-        </svg>
-      </span>
-
-      <span *ngIf="locks[9] === false">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 700 700">
-          <path d="M400 256H152V152.9c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7 32.1 72.7 72v16c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-16C376 68 307.5-.3 223.5 0 139.5.3 72 69.5 72 153.5V256H48c-26.5 0-48 21.5-48 48v160c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
 
   <button type="button"
           class="randomize-button ripple"
