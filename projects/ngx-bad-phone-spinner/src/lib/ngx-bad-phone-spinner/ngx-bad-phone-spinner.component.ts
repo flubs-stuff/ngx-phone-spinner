@@ -18,6 +18,15 @@ import {LockOptions, NgxBadPhoneSpinnerOptions} from '../ngx-bad-phone-spinner.m
   ]
 })
 export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
+  private _onTouched:() => void;
+  private _propagateChange:any = () => {};
+
+  public fullNumber:string = '0000000000';
+  public digits:number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
+
+  public disabled:boolean;
+
   @Input('options') options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
 
   @Input('number')
@@ -30,15 +39,6 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   }
 
   @Output('change') change:EventEmitter<string>;
-
-  public fullNumber:string = '0000000000';
-  public digits:number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
-
-  public disabled:boolean;
-
-  private _propagateChange:any = () => {};
-  private _onTouched:() => void;
 
   constructor() {
     this.change = new EventEmitter<string>();
