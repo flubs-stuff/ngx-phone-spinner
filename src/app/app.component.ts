@@ -16,6 +16,8 @@ export class AppComponent {
 
   public badOptions:NgxBadPhoneSpinnerOptions;
   public badderOptions:NgxBadPhoneSpinnerOptions;
+  public baddestOptions:NgxBadPhoneSpinnerOptions;
+  public fuOptions:NgxBadPhoneSpinnerOptions;
 
   constructor() {
     this.badOptions = new NgxBadPhoneSpinnerOptions();
@@ -23,13 +25,37 @@ export class AppComponent {
     this.badderOptions = new NgxBadPhoneSpinnerOptions();
 
     this.badderOptions.locks = [
+      LockOptions.MANUAL
+    ];
+
+    this.badderOptions.unlocks = [
+      LockOptions.SHUFFLE
+    ];
+
+    this.baddestOptions = new NgxBadPhoneSpinnerOptions();
+
+    this.baddestOptions.locks = [
       LockOptions.IGNORE,
       LockOptions.RANDOM
     ];
 
-    this.badderOptions.unlocks = [
+    this.baddestOptions.unlocks = [
       LockOptions.IGNORE,
       LockOptions.RANDOM
+    ];
+
+    this.fuOptions = new NgxBadPhoneSpinnerOptions();
+
+    this.fuOptions.locks = [
+      LockOptions.IGNORE,
+      LockOptions.RANDOM,
+      LockOptions.SHUFFLE
+    ];
+
+    this.fuOptions.unlocks = [
+      LockOptions.IGNORE,
+      LockOptions.RANDOM,
+      LockOptions.SHUFFLE
     ];
   }
 

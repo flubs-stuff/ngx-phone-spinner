@@ -12,4 +12,5 @@ export enum LockOptions {
   IGNORE = 'ignore',
   MANUAL = 'manual',
   RANDOM = 'random',
+  SHUFFLE = 'shuffle',
 }

@@ -100,6 +100,20 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
         this.digits[i] = Math.round(Math.random() * 9);
       }
     }
+
+    const shuffleLock = this.options.locks.indexOf(LockOptions.SHUFFLE) !== -1;
+    const shuffleUnlock = this.options.unlocks.indexOf(LockOptions.SHUFFLE) !== -1;
+    if (shuffleLock || shuffleUnlock) {
+      for (let i = 0; i < 10; i++) {
+        if (this.locks[i] === false && shuffleLock) {
+          this.locks[i] = true;
+        }
+
+        if (this.locks[i] === true && shuffleUnlock) {
+          this.locks[i] = false;
+        }
+      }
+    }
   }
 
   private _onChange():void {
