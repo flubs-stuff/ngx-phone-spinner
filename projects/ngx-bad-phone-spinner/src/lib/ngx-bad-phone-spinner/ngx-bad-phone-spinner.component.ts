@@ -26,7 +26,8 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
   public lockIcons:boolean[] = [false, false, false, false, false, false, false, false, false, false];
 
-  public disabled:boolean;
+  public disabled:boolean = false;
+  public isRandomizing:boolean = false;
 
   @Input() options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
 
@@ -127,21 +128,40 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
         }
       }
 
+      this.lockIcons[i] = this.showLockIcon(i);
+
       this._onChange();
+    }
+  }
+
+  randomizeDigit(i:number, increment?:number):void {
+    this.isRandomizing = true;
+
+    this.digits[i] = Math.round(Math.random() * 9);
+
+    if (typeof increment === 'undefined') {
+      increment = this.options.shufflesPerClick;
+      increment--;
+    }
+
+    if (increment !== 0) {
+      increment--;
+
+      setTimeout(
+        () => {
+          this.randomizeDigit(i, increment);
+        },
+        this.options.shuffleMilliseconds
+      );
+    } else {
+      this.isRandomizing = false;
     }
   }
 
   randomize():void {
     for (let i = 0; i < 10; i++) {
       if (this.locks[i] === false) {
-        for (let j = 0; j < 5; j++) {
-          setTimeout(
-            () => {
-              this.digits[i] = Math.round(Math.random() * 9);
-            },
-            200
-          );
-        }
+        this.randomizeDigit(i);
       }
     }
 
@@ -157,35 +177,25 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
           this.locks[i] = false;
         }
 
-        if (this.showLockIcon(i)) {
-          this.lockIcons[i] = true;
-        } else if (this.showUnlockIcon(i)) {
-          this.lockIcons[i] = false;
-        }
+        this.lockIcons[i] = this.showLockIcon(i);
       }
     }
   }
 
   showLockIcon(i:number):boolean {
     let showLockIcon = this.locks[i];
-    if (this.options.locks.indexOf(LockOptions.LIAR) !== -1) {
+
+    if (this.locks[i] === true && this.options.locks.indexOf(LockOptions.LIAR) !== -1) {
+      if (Math.random() < 0.25) {
+        showLockIcon = !this.locks[i];
+      }
+    } else if (this.locks[i] === false && this.options.unlocks.indexOf(LockOptions.LIAR) !== -1) {
       if (Math.random() < 0.25) {
         showLockIcon = !this.locks[i];
       }
     }
 
     return showLockIcon;
-  }
-
-  showUnlockIcon(i:number):boolean {
-    let showUnlockIcon = this.locks[i];
-    if (this.options.unlocks.indexOf(LockOptions.LIAR) !== -1) {
-      if (Math.random() < 0.25) {
-        showUnlockIcon = !this.locks[i];
-      }
-    }
-
-    return showUnlockIcon;
   }
 
   private _onChange():void {

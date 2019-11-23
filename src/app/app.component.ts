@@ -52,6 +52,9 @@ export class AppComponent {
       LockOptions.RANDOM
     ];
 
+    this.baddestOptions.shufflesPerClick = 10;
+    this.baddestOptions.shuffleMilliseconds = 200;
+
     this.fuOptions = new NgxBadPhoneSpinnerOptions();
 
     this.fuOptions.locks = [
@@ -67,6 +70,9 @@ export class AppComponent {
       LockOptions.RANDOM,
       LockOptions.SHUFFLE
     ];
+
+    this.baddestOptions.shufflesPerClick = 20;
+    this.baddestOptions.shuffleMilliseconds = 150;
 
     this.resetValue();
   }

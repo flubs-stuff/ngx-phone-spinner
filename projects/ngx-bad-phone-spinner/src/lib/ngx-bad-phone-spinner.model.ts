@@ -6,6 +6,9 @@ export class NgxBadPhoneSpinnerOptions {
   public unlocks:LockOptions[] = [
     LockOptions.MANUAL
   ];
+
+  public shuffleMilliseconds = 200;
+  public shufflesPerClick = 5;
 }
 
 export enum LockOptions {

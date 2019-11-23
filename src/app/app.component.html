@@ -6,6 +6,7 @@
   <button *ngFor="let d of difficulties"
           type="button"
           class="ripple"
+          [ngClass]="{ 'selected-difficulty': d === difficulty }"
           (click)="difficulty = d">
     {{ d }}
   </button>
