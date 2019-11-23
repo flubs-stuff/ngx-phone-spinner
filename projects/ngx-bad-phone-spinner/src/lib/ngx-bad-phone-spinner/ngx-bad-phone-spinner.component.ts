@@ -24,12 +24,13 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   public fullNumber:string = '0000000000';
   public digits:number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
+  public lockIcons:boolean[] = [false, false, false, false, false, false, false, false, false, false];
 
   public disabled:boolean;
 
-  @Input('options') options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
+  @Input() options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
 
-  @Input('number')
+  @Input()
   set number(digits:string) {
     const candidates = digits.split('');
 
@@ -38,7 +39,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     }
   }
 
-  @Output('change') change:EventEmitter<string>;
+  @Output() change:EventEmitter<string>;
 
   constructor() {
     this.change = new EventEmitter<string>();
@@ -133,7 +134,14 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   randomize():void {
     for (let i = 0; i < 10; i++) {
       if (this.locks[i] === false) {
-        this.digits[i] = Math.round(Math.random() * 9);
+        for (let j = 0; j < 5; j++) {
+          setTimeout(
+            () => {
+              this.digits[i] = Math.round(Math.random() * 9);
+            },
+            200
+          );
+        }
       }
     }
 
@@ -147,6 +155,12 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
 
         if (this.locks[i] === true && shuffleUnlock) {
           this.locks[i] = false;
+        }
+
+        if (this.showLockIcon(i)) {
+          this.lockIcons[i] = true;
+        } else if (this.showUnlockIcon(i)) {
+          this.lockIcons[i] = false;
         }
       }
     }
