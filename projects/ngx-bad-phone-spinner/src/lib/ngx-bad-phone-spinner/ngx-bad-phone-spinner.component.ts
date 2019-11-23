@@ -158,6 +158,18 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     }
   }
 
+  clearLocks():void {
+    for (let i = 0; i < 10; i++) {
+      this.locks[i] = false;
+      this.lockIcons[i] = this.showLockIcon(i);
+    }
+  }
+
+  reset():void {
+    this.clearLocks();
+    this.randomize();
+  }
+
   randomize():void {
     for (let i = 0; i < 10; i++) {
       if (this.locks[i] === false) {

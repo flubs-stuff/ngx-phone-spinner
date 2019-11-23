@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1]
 - Add shuffle animation by [jrquick17](https://github.com/jrquick17)
+- Add clear locks and restart buttons by [jrquick17](https://github.com/jrquick17)
 - Add option to randomly lock/unlock by [jrquick17](https://github.com/jrquick17)
 - Add option to lock/unlock after each shuffle by [jrquick17](https://github.com/jrquick17)
 - Add option to require lock/unlock in order (left to right) by [jrquick17](https://github.com/jrquick17)
