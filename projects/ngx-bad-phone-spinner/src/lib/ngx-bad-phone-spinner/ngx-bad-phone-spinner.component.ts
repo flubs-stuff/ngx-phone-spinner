@@ -95,6 +95,14 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
       }
     }
 
+    if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
+      canChange = false;
+    }
+
+    if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
+      canChange = false;
+    }
+
     if (canChange) {
       this.locks[i] = !this.locks[i];
 
@@ -107,10 +115,6 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
             Math.random() * 1000 * 60
           );
         }
-
-        if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
-          this.locks[i] = false;
-        }
       } else {
         if (this.options.locks.indexOf(LockOptions.RANDOM) !== -1) {
           setTimeout(
@@ -119,10 +123,6 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
             },
             Math.random() * 1000 * 60
           );
-        }
-
-        if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
-          this.locks[i] = true;
         }
       }
 
