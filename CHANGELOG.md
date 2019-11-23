@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1]
+- Add option to randomly lock and unlock by [jrquick17](https://github.com/jrquick17)
+- Add option to lock and unlock after each shuffle by [jrquick17](https://github.com/jrquick17)
+
 ## [Released]
 
 ## [1.0.0]
