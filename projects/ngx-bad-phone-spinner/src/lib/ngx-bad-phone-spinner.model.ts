@@ -11,6 +11,7 @@ export class NgxBadPhoneSpinnerOptions {
 export enum LockOptions {
   IGNORE = 'ignore',
   MANUAL = 'manual',
+  ORDER = 'order',
   RANDOM = 'random',
   SHUFFLE = 'shuffle',
 }

@@ -61,37 +61,58 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   }
 
   toggleLock(i:number):void {
-    this.locks[i] = !this.locks[i];
-
-    if (this.locks[i]) {
-      if (this.options.unlocks.indexOf(LockOptions.RANDOM) !== -1) {
-        setTimeout(
-          () => {
-            this.locks[i] = false;
-          },
-          Math.random() * 1000 * 60
-        );
+    let canChange = true;
+    if (i !== 0) {
+      if (this.options.locks.indexOf(LockOptions.ORDER) !== -1) {
+        if (i - 1 < this.locks.length) {
+          if (this.locks[i - 1] === false) {
+            canChange = false;
+          }
+        }
       }
 
-      if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
-        this.locks[i] = false;
-      }
-    } else {
-      if (this.options.locks.indexOf(LockOptions.RANDOM) !== -1) {
-        setTimeout(
-          () => {
-            this.locks[i] = true;
-          },
-          Math.random() * 1000 * 60
-        );
-      }
-
-      if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
-        this.locks[i] = true;
+      if (this.options.unlocks.indexOf(LockOptions.ORDER) !== -1) {
+        if (i - 1 < this.locks.length) {
+          if (this.locks[i - 1] === true) {
+            canChange = false;
+          }
+        }
       }
     }
 
-    this._onChange();
+    if (canChange) {
+      this.locks[i] = !this.locks[i];
+
+      if (this.locks[i]) {
+        if (this.options.unlocks.indexOf(LockOptions.RANDOM) !== -1) {
+          setTimeout(
+            () => {
+              this.locks[i] = false;
+            },
+            Math.random() * 1000 * 60
+          );
+        }
+
+        if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
+          this.locks[i] = false;
+        }
+      } else {
+        if (this.options.locks.indexOf(LockOptions.RANDOM) !== -1) {
+          setTimeout(
+            () => {
+              this.locks[i] = true;
+            },
+            Math.random() * 1000 * 60
+          );
+        }
+
+        if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
+          this.locks[i] = true;
+        }
+      }
+
+      this._onChange();
+    }
   }
 
   randomize():void {
