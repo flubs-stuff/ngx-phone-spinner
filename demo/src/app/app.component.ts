@@ -1,28 +1,101 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {Component} from '@angular/core';
+
+import {LockOptions, NgxBadPhoneSpinnerOptions} from 'ngx-bad-phone-spinner';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+  selector:    'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: [
+    './app.component.scss'
+  ]
 })
 export class AppComponent {
-    title = 'mat-increments';
+  public difficulties:string[] = [
+    'bad',
+    'badder',
+    'baddest',
+    'satan',
+  ];
+  public difficulty:string = this.difficulties[0];
 
-    form: FormGroup;
-    value: string = '2055550786';
+  public title:string = 'NgxBadPhoneSpinner';
+  public value:string;
 
-    constructor(private fb: FormBuilder) {
-        this.form = this.fb.group({
-            price: 11
-        });
+  public badOptions:NgxBadPhoneSpinnerOptions;
+  public badderOptions:NgxBadPhoneSpinnerOptions;
+  public baddestOptions:NgxBadPhoneSpinnerOptions;
+  public fuOptions:NgxBadPhoneSpinnerOptions;
+
+  constructor() {
+    this.badOptions = new NgxBadPhoneSpinnerOptions();
+
+    this.badderOptions = new NgxBadPhoneSpinnerOptions();
+
+    this.badderOptions.locks = [
+      LockOptions.IGNORE,
+      LockOptions.MANUAL
+    ];
+
+    this.badderOptions.unlocks = [
+      LockOptions.MANUAL,
+      LockOptions.SHUFFLE
+    ];
+
+    this.baddestOptions = new NgxBadPhoneSpinnerOptions();
+
+    this.baddestOptions.locks = [
+      LockOptions.IGNORE,
+      LockOptions.LIAR,
+      LockOptions.MANUAL,
+      LockOptions.RANDOM
+    ];
+
+    this.baddestOptions.unlocks = [
+      LockOptions.IGNORE,
+      LockOptions.MANUAL,
+      LockOptions.RANDOM,
+      LockOptions.SHUFFLE
+    ];
+
+    this.baddestOptions.shufflesPerClick = 10;
+    this.baddestOptions.shuffleMilliseconds = 200;
+
+    this.fuOptions = new NgxBadPhoneSpinnerOptions();
+
+    this.fuOptions.locks = [
+      LockOptions.IGNORE,
+      LockOptions.LIAR,
+      LockOptions.MANUAL,
+      LockOptions.RANDOM,
+      LockOptions.SHUFFLE
+    ];
+
+    this.fuOptions.unlocks = [
+      LockOptions.IGNORE,
+      LockOptions.LIAR,
+      LockOptions.MANUAL,
+      LockOptions.RANDOM,
+      LockOptions.SHUFFLE
+    ];
+
+    this.baddestOptions.shufflesPerClick = 20;
+    this.baddestOptions.shuffleMilliseconds = 150;
+
+    this.resetValue();
+  }
+
+  resetValue():void {
+    this.value = '';
+    for (let i = 0; i < 10; i++) {
+      this.value += Math.round(Math.random() * 9);
     }
+  }
 
-    submit() {
-        alert(JSON.stringify(this.form.value));
-    }
+  submit():void {
+    alert(this.value);
+  }
 
-    change(value: string) {
-        this.value = value;
-    }
+  change(value:string):void {
+    this.value = value;
+  }
 }
