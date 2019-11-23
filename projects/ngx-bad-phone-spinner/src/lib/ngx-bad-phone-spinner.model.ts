@@ -7,6 +7,8 @@ export class NgxBadPhoneSpinnerOptions {
     LockOptions.MANUAL
   ];
 
+  public modals:ModalOptions[] = [];
+
   public shuffleMilliseconds = 200;
   public shufflesPerClick = 5;
 }
@@ -19,18 +21,6 @@ export enum LockOptions {
   RANDOM = 'random',
   REVERSE = 'reverse',
   SHUFFLE = 'shuffle',
-}
-
-export class NgxBadPhoneSpinnerOptions {
-  public locks:LockOptions[] = [
-    LockOptions.MANUAL
-  ];
-
-  public unlocks:LockOptions[] = [
-    LockOptions.MANUAL
-  ];
-
-  public modals:ModalOptions[] = [];
 }
 
 export class ModalOptions {

@@ -225,17 +225,17 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
       const shuffleLock = this.options.locks.indexOf(LockOptions.SHUFFLE) !== -1;
       const shuffleUnlock = this.options.unlocks.indexOf(LockOptions.SHUFFLE) !== -1;
       if (shuffleLock || shuffleUnlock) {
-        for (let i = 0; i < 10; i++) {
-          if (this.locks[i] === false && shuffleLock) {
-            this.locks[i] = true;
+        for (let j = 0; j < 10; j++) {
+          if (this.locks[j] === false && shuffleLock) {
+            this.locks[j] = true;
           }
 
-          if (this.locks[i] === true && shuffleUnlock) {
-            this.locks[i] = false;
+          if (this.locks[j] === true && shuffleUnlock) {
+            this.locks[j] = false;
           }
 
-          this.lockColors[i] = this.showLockIcon(i);
-          this.lockIcons[i] = this.showLockIcon(i);
+          this.lockColors[j] = this.showLockIcon(j);
+          this.lockIcons[j] = this.showLockIcon(j);
         }
       }
 
