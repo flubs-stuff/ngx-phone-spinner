@@ -13,5 +13,6 @@ export enum LockOptions {
   MANUAL = 'manual',
   ORDER = 'order',
   RANDOM = 'random',
+  REVERSE = 'reverse',
   SHUFFLE = 'shuffle',
 }

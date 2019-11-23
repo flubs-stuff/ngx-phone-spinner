@@ -64,7 +64,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     let canChange = true;
     if (i !== 0) {
       if (this.options.locks.indexOf(LockOptions.ORDER) !== -1) {
-        if (i - 1 < this.locks.length) {
+        if (i !== 0) {
           if (this.locks[i - 1] === false) {
             canChange = false;
           }
@@ -72,8 +72,23 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
       }
 
       if (this.options.unlocks.indexOf(LockOptions.ORDER) !== -1) {
-        if (i - 1 < this.locks.length) {
+        if (i !== 0) {
           if (this.locks[i - 1] === true) {
+            canChange = false;
+          }
+        }
+      }
+      if (this.options.locks.indexOf(LockOptions.REVERSE) !== -1) {
+        if (i + 1 < this.locks.length) {
+          if (this.locks[i + 1] === false) {
+            canChange = false;
+          }
+        }
+      }
+
+      if (this.options.unlocks.indexOf(LockOptions.REVERSE) !== -1) {
+        if (i + 1 < this.locks.length) {
+          if (this.locks[i + 1] === true) {
             canChange = false;
           }
         }
