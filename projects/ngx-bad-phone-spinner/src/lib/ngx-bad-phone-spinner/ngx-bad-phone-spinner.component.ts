@@ -157,6 +157,23 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
       );
     } else {
       this.isRandomizing = false;
+
+      const shuffleLock = this.options.locks.indexOf(LockOptions.SHUFFLE) !== -1;
+      const shuffleUnlock = this.options.unlocks.indexOf(LockOptions.SHUFFLE) !== -1;
+      if (shuffleLock || shuffleUnlock) {
+        for (let i = 0; i < 10; i++) {
+          if (this.locks[i] === false && shuffleLock) {
+            this.locks[i] = true;
+          }
+
+          if (this.locks[i] === true && shuffleUnlock) {
+            this.locks[i] = false;
+          }
+
+          this.lockColors[i] = this.showLockIcon(i);
+          this.lockIcons[i] = this.showLockIcon(i);
+        }
+      }
     }
   }
 
@@ -177,23 +194,6 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     for (let i = 0; i < 10; i++) {
       if (this.locks[i] === false) {
         this.randomizeDigit(i);
-      }
-    }
-
-    const shuffleLock = this.options.locks.indexOf(LockOptions.SHUFFLE) !== -1;
-    const shuffleUnlock = this.options.unlocks.indexOf(LockOptions.SHUFFLE) !== -1;
-    if (shuffleLock || shuffleUnlock) {
-      for (let i = 0; i < 10; i++) {
-        if (this.locks[i] === false && shuffleLock) {
-          this.locks[i] = true;
-        }
-
-        if (this.locks[i] === true && shuffleUnlock) {
-          this.locks[i] = false;
-        }
-
-        this.lockColors[i] = this.showLockIcon(i);
-        this.lockIcons[i] = this.showLockIcon(i);
       }
     }
   }
