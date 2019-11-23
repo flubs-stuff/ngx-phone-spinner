@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 
-import {LockOptions, NgxBadPhoneSpinnerOptions} from '../../projects/ngx-bad-phone-spinner/src/lib/ngx-bad-phone-spinner.model';
+import {LockOptions} from '../../projects/ngx-bad-phone-spinner/src/lib/models/lock-options.model';
+import {NgxBadPhoneSpinnerOptions} from '../../projects/ngx-bad-phone-spinner/src/lib/models/ngx-bad-phone-spinner.model';
 
 @Component({
   selector:    'app-root',
