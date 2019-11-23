@@ -32,10 +32,12 @@ export class AppComponent {
     this.badderOptions = new NgxBadPhoneSpinnerOptions();
 
     this.badderOptions.locks = [
+      LockOptions.IGNORE,
       LockOptions.MANUAL
     ];
 
     this.badderOptions.unlocks = [
+      LockOptions.MANUAL,
       LockOptions.SHUFFLE
     ];
 
@@ -44,12 +46,15 @@ export class AppComponent {
     this.baddestOptions.locks = [
       LockOptions.IGNORE,
       LockOptions.LIAR,
+      LockOptions.MANUAL,
       LockOptions.RANDOM
     ];
 
     this.baddestOptions.unlocks = [
       LockOptions.IGNORE,
-      LockOptions.RANDOM
+      LockOptions.MANUAL,
+      LockOptions.RANDOM,
+      LockOptions.SHUFFLE
     ];
 
     this.baddestOptions.shufflesPerClick = 10;
@@ -60,6 +65,7 @@ export class AppComponent {
     this.fuOptions.locks = [
       LockOptions.IGNORE,
       LockOptions.LIAR,
+      LockOptions.MANUAL,
       LockOptions.RANDOM,
       LockOptions.SHUFFLE
     ];
@@ -67,6 +73,7 @@ export class AppComponent {
     this.fuOptions.unlocks = [
       LockOptions.IGNORE,
       LockOptions.LIAR,
+      LockOptions.MANUAL,
       LockOptions.RANDOM,
       LockOptions.SHUFFLE
     ];
