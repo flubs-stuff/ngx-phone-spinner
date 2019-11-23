@@ -152,6 +152,28 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     }
   }
 
+  showLockIcon(i:number):boolean {
+    let showLockIcon = this.locks[i];
+    if (this.options.locks.indexOf(LockOptions.LIAR) !== -1) {
+      if (Math.random() < 0.25) {
+        showLockIcon = !this.locks[i];
+      }
+    }
+
+    return showLockIcon;
+  }
+
+  showUnlockIcon(i:number):boolean {
+    let showUnlockIcon = this.locks[i];
+    if (this.options.unlocks.indexOf(LockOptions.LIAR) !== -1) {
+      if (Math.random() < 0.25) {
+        showUnlockIcon = !this.locks[i];
+      }
+    }
+
+    return showUnlockIcon;
+  }
+
   private _onChange():void {
     this.fullNumber = '';
     for (let i = 0; i < 10; i++) {

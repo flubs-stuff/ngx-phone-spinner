@@ -36,6 +36,7 @@ export class AppComponent {
 
     this.baddestOptions.locks = [
       LockOptions.IGNORE,
+      LockOptions.LIAR,
       LockOptions.RANDOM
     ];
 
@@ -48,12 +49,14 @@ export class AppComponent {
 
     this.fuOptions.locks = [
       LockOptions.IGNORE,
+      LockOptions.LIAR,
       LockOptions.RANDOM,
       LockOptions.SHUFFLE
     ];
 
     this.fuOptions.unlocks = [
       LockOptions.IGNORE,
+      LockOptions.LIAR,
       LockOptions.RANDOM,
       LockOptions.SHUFFLE
     ];
