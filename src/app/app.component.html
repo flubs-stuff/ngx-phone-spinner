@@ -1,6 +1,18 @@
 <h1>ngx-bad-phone-spinner</h1>
 
 <div>
+  <h3>Select a difficulty</h3>
+
+  <button *ngFor="let d of difficulties"
+          type="button"
+          class="ripple"
+          [ngClass]="{ 'selected-difficulty': d === difficulty }"
+          (click)="difficulty = d">
+    {{ d }}
+  </button>
+</div>
+
+<div *ngIf="difficulty === 'bad'">
   <h4 style="margin-left: 10px;">
     Enter your phone number:
   </h4>
@@ -11,9 +23,8 @@
       (change)="change($event)">
   </ngx-bad-phone-spinner>
 </div>
-<br/>
-<br/>
-<div>
+
+<div *ngIf="difficulty === 'badder'">
   <h4 style="margin-left: 10px;">
     Try to enter your phone number:
   </h4>
@@ -24,9 +35,8 @@
     (change)="change($event)">
   </ngx-bad-phone-spinner>
 </div>
-<br/>
-<br/>
-<div>
+
+<div *ngIf="difficulty === 'baddest'">
   <h4 style="margin-left: 10px;">
     You will never enter your phone number:
   </h4>
@@ -37,9 +47,8 @@
     (change)="change($event)">
   </ngx-bad-phone-spinner>
 </div>
-<br/>
-<br/>
-<div>
+
+<div *ngIf="difficulty === 'satan'">
   <h4 style="margin-left: 10px;">
     Good luck, fucker:
   </h4>

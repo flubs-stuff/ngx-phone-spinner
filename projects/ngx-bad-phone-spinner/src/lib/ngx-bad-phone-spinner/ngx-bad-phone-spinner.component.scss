@@ -9,6 +9,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .ngx-bad-phone-spinner {
+  display: flex;
+  width: 100%;
+
   .wrapper {
     border-top: $border;
     float: left;
@@ -46,7 +49,7 @@ input[type=number]::-webkit-outer-spin-button {
       padding: .5rem;
       font-size: 1rem;
       flex: 1;
-      min-width: 30px;
+      min-width: 20px;
       text-align: center;
       vertical-align: unset;
     }
@@ -65,7 +68,6 @@ input[type=number]::-webkit-outer-spin-button {
     background-position: center;
     transition: background 0.3s;
 
-
     &:hover {
       cursor: pointer;
       background: rgba(0, 0, 0, .12) radial-gradient(circle, transparent 1%, rgba(0, 0, 0, .12) 1%) center/15000%;
@@ -79,7 +81,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .randomize-button {
-    width: 50px;
+    width: 45px;
     border-radius: 9px;
     margin-left: 10px;
     height: 37px;
