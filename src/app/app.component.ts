@@ -10,9 +10,16 @@ import {LockOptions, NgxBadPhoneSpinnerOptions} from '../../projects/ngx-bad-pho
   ]
 })
 export class AppComponent {
-  public title:string = 'NgxBadPhoneSpinner';
+  public difficulties:string[] = [
+    'bad',
+    'badder',
+    'baddest',
+    'satan',
+  ];
+  public difficulty:string = this.difficulties[0];
 
-  public value:string = '2055550786';
+  public title:string = 'NgxBadPhoneSpinner';
+  public value:string;
 
   public badOptions:NgxBadPhoneSpinnerOptions;
   public badderOptions:NgxBadPhoneSpinnerOptions;
@@ -60,6 +67,15 @@ export class AppComponent {
       LockOptions.RANDOM,
       LockOptions.SHUFFLE
     ];
+
+    this.resetValue();
+  }
+
+  resetValue():void {
+    this.value = '';
+    for (let i = 0; i < 10; i++) {
+      this.value += Math.round(Math.random() * 9);
+    }
   }
 
   submit():void {
