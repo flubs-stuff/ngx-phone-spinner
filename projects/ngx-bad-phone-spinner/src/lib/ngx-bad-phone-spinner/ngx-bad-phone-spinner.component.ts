@@ -25,6 +25,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   public digits:number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
   public lockIcons:boolean[] = [false, false, false, false, false, false, false, false, false, false];
+  public lockColors:boolean[] = [false, false, false, false, false, false, false, false, false, false];
 
   public disabled:boolean = false;
   public isRandomizing:boolean = false;
@@ -128,6 +129,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
         }
       }
 
+      this.lockColors[i] = this.showLockIcon(i);
       this.lockIcons[i] = this.showLockIcon(i);
 
       this._onChange();
@@ -161,6 +163,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   clearLocks():void {
     for (let i = 0; i < 10; i++) {
       this.locks[i] = false;
+      this.lockColors[i] = this.showLockIcon(i);
       this.lockIcons[i] = this.showLockIcon(i);
     }
   }
@@ -189,6 +192,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
           this.locks[i] = false;
         }
 
+        this.lockColors[i] = this.showLockIcon(i);
         this.lockIcons[i] = this.showLockIcon(i);
       }
     }
