@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {LockOptions, NgxBadPhoneSpinnerOptions} from '../../projects/ngx-bad-phone-spinner/src/lib/ngx-bad-phone-spinner.model';
+import {LockOptions, NgxBadPhoneSpinnerOptions} from 'ngx-bad-phone-spinner';
 
 @Component({
   selector:    'app-root',
@@ -30,6 +30,15 @@ export class AppComponent {
 
     this.badderOptions.unlocks = [
       LockOptions.SHUFFLE
+    ];
+
+    this.badderOptions.modals = [
+      {
+        title:   'Confirm',
+        text:    'Are you sure you want to lock this digit?',
+        cancel:  'No',
+        confirm: 'Yes'
+      }
     ];
 
     this.baddestOptions = new NgxBadPhoneSpinnerOptions();

@@ -2,6 +2,7 @@ import {Component, EventEmitter, forwardRef, Input, Output} from '@angular/core'
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 import {LockOptions, NgxBadPhoneSpinnerOptions} from '../ngx-bad-phone-spinner.model';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector:    'ngx-bad-phone-spinner',
@@ -26,8 +27,10 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   public locks:boolean[] = [false, false, false, false, false, false, false, false, false, false];
 
   public disabled:boolean;
+  public modalI:number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  public lastI:number = 0;
 
-  @Input('options') options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
+  @Input() options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
 
   @Input('number')
   set number(digits:string) {
@@ -38,10 +41,48 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
     }
   }
 
-  @Output('change') change:EventEmitter<string>;
+  @Output() change:EventEmitter<string>;
 
-  constructor() {
+  constructor(
+    public modalService:NgxSmartModalService
+  ) {
     this.change = new EventEmitter<string>();
+  }
+
+  getCancelText():string {
+    let text = '';
+    if (this.modalI[this.lastI] && this.options.modals[this.modalI[this.lastI]]) {
+      text = this.options.modals[this.modalI[this.lastI]].cancel;
+    }
+
+    return text;
+  }
+
+  getConfirmText():string {
+    let text = '';
+    if (this.modalI[this.lastI] && this.options.modals[this.modalI[this.lastI]]) {
+      text = this.options.modals[this.modalI[this.lastI]].confirm;
+    }
+
+    return text;
+  }
+
+  getTextText():string {
+    let text = '';
+    if (this.modalI[this.lastI] && this.options.modals[this.modalI[this.lastI]]) {
+      text = this.options.modals[this.modalI[this.lastI]].text;
+    }
+
+    return text;
+  }
+
+  getTitleText():string {
+    let text = '';
+    if (this.modalI[this.lastI] && this.options.modals[this.modalI[this.lastI]]) {
+      text = this.options.modals[this.modalI[this.lastI]].title;
+    }
+
+    return text;
   }
 
   writeValue(value:string):void {
@@ -61,37 +102,63 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   }
 
   toggleLock(i:number):void {
-    this.locks[i] = !this.locks[i];
+    this.lastI = i;
 
-    if (this.locks[i]) {
-      if (this.options.unlocks.indexOf(LockOptions.RANDOM) !== -1) {
-        setTimeout(
-          () => {
-            this.locks[i] = false;
-          },
-          Math.random() * 1000 * 60
-        );
-      }
+    // if (this.locks[i] === false && this.modalI[i] < this.options.modals.length) {
+    if (this.locks[i] === false && this.modalI[i] < this.options.modals.length) {
+      this.modalI[i]++;
 
-      if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
-        this.locks[i] = false;
-      }
+      this.modalService.resetModalData('badModal');
+      this.modalService.open('badModal');
     } else {
-      if (this.options.locks.indexOf(LockOptions.RANDOM) !== -1) {
-        setTimeout(
-          () => {
-            this.locks[i] = true;
-          },
-          Math.random() * 1000 * 60
-        );
+      this.locks[i] = !this.locks[i];
+
+      if (this.locks[i]) {
+        if (this.options.unlocks.indexOf(LockOptions.RANDOM) !== -1) {
+          const self = this;
+          setTimeout(
+            () => {
+              self.locks[i] = false;
+            },
+            Math.random() * 1000 * 60
+          );
+        }
+
+        if (this.options.unlocks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
+          this.locks[i] = false;
+
+          this.modalI[i]--;
+        }
+      } else {
+        if (this.options.locks.indexOf(LockOptions.RANDOM) !== -1) {
+          setTimeout(
+            () => {
+              this.locks[i] = true;
+            },
+            Math.random() * 1000 * 60
+          );
+        }
+
+        if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
+          this.locks[i] = true;
+        }
       }
 
-      if (this.options.locks.indexOf(LockOptions.IGNORE) !== -1 && Math.random() < 0.5) {
-        this.locks[i] = true;
-      }
+      this._onChange();
     }
+  }
 
-    this._onChange();
+  modalClosed(event:boolean):void {
+    if (event) {
+      setTimeout(
+        () => {
+          this.toggleLock(this.lastI);
+        },
+        500
+      );
+    } else {
+      this.modalI[this.lastI] = 0;
+    }
   }
 
   randomize():void {
@@ -114,6 +181,8 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
         }
       }
     }
+
+    this.modalI = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   }
 
   private _onChange():void {

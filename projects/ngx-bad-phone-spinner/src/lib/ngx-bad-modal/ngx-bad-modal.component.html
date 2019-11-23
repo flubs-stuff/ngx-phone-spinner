@@ -1,0 +1,19 @@
+<ngx-smart-modal [id]="id"
+                 [identifier]="id"
+                 [closable]="false"
+                 [dismissable]="false"
+                 [escapable]="false"
+                 [hideDelay]="0"
+                 (onOpen)="emitOpen($event)">
+  <h1 *ngIf="titleText.length !== 0">{{ titleText }}</h1>
+
+  <p *ngIf="textText.length !== 0">{{ textText }}</p>
+
+  <button (click)="confirm()">
+    {{ confirmText }}
+  </button>
+
+  <button (click)="cancel()">
+    {{ cancelText }}
+  </button>
+</ngx-smart-modal>
