@@ -1,0 +1,20 @@
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
+
+# Mac
+.DS_Store
+**/.DS_Store
+
+# Node
+node_modules/*
+npm-debug.log
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+example.gif
