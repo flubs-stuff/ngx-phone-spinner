@@ -1,5 +1,5 @@
 {
-  "name": "ngx-bad-phone-spinner-demo",
+  "name": "@flubs/ngx-phone-spinner-demo",
   "version": "1.1.1",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": false,
+  "private": true,
   "dependencies": {
     "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.2.3",
