@@ -1,0 +1,56 @@
+{
+  "configVersion": 1,
+  "timestamp": 1575399408576,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/index.html",
+        "/main.f790b3fa4cfdbd87427b.js",
+        "/polyfills-es5.812fed2a565c7708ca9e.js",
+        "/polyfills.1c9a6ee6914890989655.js",
+        "/runtime.a8ef3a8272419c2e2c66.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/favicon.ico"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "a2df0102ec2aa0c781ff74a7bccfd6bc5501e39a",
+    "/main.f790b3fa4cfdbd87427b.js": "c47b3ae354ee0120febd7522dfb35af7d00c09f4",
+    "/polyfills-es5.812fed2a565c7708ca9e.js": "43a91b8d623b8265c3671ed8888e5da06870a7a1",
+    "/polyfills.1c9a6ee6914890989655.js": "a21062bebc5610b4372b6638679b27dddb98a350",
+    "/runtime.a8ef3a8272419c2e2c66.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
