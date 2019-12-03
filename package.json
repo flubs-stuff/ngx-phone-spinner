@@ -1,7 +1,6 @@
 {
   "name": "@flubs/ngx-phone-spinner",
   "version": "1.2.0",
-  "readme": "README.md",
   "scripts": {
     "build": "ng-packagr -p package.json && cp src/ngx-phone-spinner/ngx-phone-spinner.component.scss dist/ngx-phone-spinner.scss && cp -r src/assets dist/assets",
     "demo": "cd demo && ng serve",
@@ -12,7 +11,7 @@
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
-    "publish": "npm publish dist",
+    "publish": "npm publish dist --access public",
     "shipit": "npm run lint && npm run test && npm run build && npm run docs:build && npm run publish",
     "test": "tsc && karma start"
   },
@@ -74,5 +73,20 @@
     "@angular/core": "^8.2.14",
     "@angular/forms": "^8.2.14",
     "zone.js": "~0.9.1"
-  }
+  },
+  "description": "README.md",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flubs-stuff/ngx-phone-spinner.git"
+  },
+  "author": "Jeremy Quick <me@jrquick.com>",
+  "bugs": {
+    "url": "https://github.com/flubs-stuff/ngx-phone-spinner/issues"
+  },
+  "homepage": "https://github.com/flubs-stuff/ngx-phone-spinner#readme"
 }
