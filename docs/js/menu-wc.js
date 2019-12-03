@@ -16,7 +16,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
         <nav>
             <ul class="list">
                 <li class="title">
-                    <a href="index.html" data-type="index-link">ionic4-auto-complete</a>
+                    <a href="index.html" data-type="index-link">ionic4-ngx-bad-phone-spinner</a>
                 </li>
 
                 <li class="divider"></li>
@@ -65,35 +65,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-d58b45ba73eb958033b1c63ad24e6724"' : 'data-target="#xs-components-links-module-AppModule-d58b45ba73eb958033b1c63ad24e6724"' }>
+                                            'data-target="#components-links-module-AppModule-6bbb5ef569944862989ac75a020830bc"' : 'data-target="#xs-components-links-module-AppModule-6bbb5ef569944862989ac75a020830bc"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-d58b45ba73eb958033b1c63ad24e6724"' :
-                                            'id="xs-components-links-module-AppModule-d58b45ba73eb958033b1c63ad24e6724"' }>
-                                            <li class="link">
-                                                <a href="components/AppComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                            </li>
-                            <li class="link">
-                                <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                                    <li class="chapter inner">
-                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-135ba23f71d4b4a2ee39141427f8f0c2-1"' : 'data-target="#xs-components-links-module-AppModule-135ba23f71d4b4a2ee39141427f8f0c2-1"' }>
-                                            <span class="icon ion-md-cog"></span>
-                                            <span>Components</span>
-                                            <span class="icon ion-ios-arrow-down"></span>
-                                        </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-135ba23f71d4b4a2ee39141427f8f0c2-1"' :
-                                            'id="xs-components-links-module-AppModule-135ba23f71d4b4a2ee39141427f8f0c2-1"' }>
-                                            <li class="link">
-                                                <a href="components/AppComponent-1.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                            </li>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-6bbb5ef569944862989ac75a020830bc"' :
+                                            'id="xs-components-links-module-AppModule-6bbb5ef569944862989ac75a020830bc"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -105,13 +83,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxBadPhoneSpinnerModule.html" data-type="entity-link">NgxBadPhoneSpinnerModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' : 'data-target="#xs-components-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' }>
+                                            'data-target="#components-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' : 'data-target="#xs-components-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' :
-                                            'id="xs-components-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' :
+                                            'id="xs-components-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' }>
                                             <li class="link">
                                                 <a href="components/NgxBadPhoneSpinnerComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">NgxBadPhoneSpinnerComponent</a>
@@ -120,13 +98,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' : 'data-target="#xs-pipes-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' }>
+                                            'data-target="#pipes-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' : 'data-target="#xs-pipes-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' :
-                                            'id="xs-pipes-links-module-NgxBadPhoneSpinnerModule-11d1169def18db8c148d56e414e56a5d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' :
+                                            'id="xs-pipes-links-module-NgxBadPhoneSpinnerModule-50c7ff61bbc911d12ab85568f3d6640b"' }>
                                             <li class="link">
                                                 <a href="pipes/RangePipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">RangePipe</a>

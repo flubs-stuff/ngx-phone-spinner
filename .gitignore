@@ -46,3 +46,6 @@ testem.log
 .DS_Store
 Thumbs.db
 package-lock.json
+
+node_modules/
+demo/node_modules/

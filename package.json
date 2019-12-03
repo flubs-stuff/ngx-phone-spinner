@@ -13,7 +13,7 @@
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "publish": "npm publish dist",
-    "shipit": "npm run lint && npm run test && npm run build:demo && npm run docs:build && npm run publish",
+    "shipit": "npm run lint && npm run test && npm run build && npm run docs:build && npm run publish",
     "test": "tsc && karma start"
   },
   "private": false,
@@ -26,6 +26,7 @@
       ]
     }
   },
+  "license": "MIT",
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.20",
     "@angular-devkit/build-ng-packagr": "^0.803.20",
