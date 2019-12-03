@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 
-import {BrowserModule} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
 import {NgxBadPhoneSpinnerComponent} from './ngx-bad-phone-spinner/ngx-bad-phone-spinner.component';
-import {RangeModule} from './range/range.module';
+import {RangePipe} from './range/range.pipe';
 
 @NgModule({
   declarations: [
-    NgxBadPhoneSpinnerComponent
+    NgxBadPhoneSpinnerComponent,
+    RangePipe
   ],
   entryComponents: [
     NgxBadPhoneSpinnerComponent
@@ -18,10 +18,8 @@ import {RangeModule} from './range/range.module';
     NgxBadPhoneSpinnerComponent
   ],
   imports: [
-    BrowserModule,
     CommonModule,
-    FormsModule,
-    RangeModule
+    FormsModule
   ],
   providers: []
 })
