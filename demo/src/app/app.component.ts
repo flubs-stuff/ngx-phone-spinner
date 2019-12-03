@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {LockOptions, NgxBadPhoneSpinnerOptions} from 'ngx-phone-spinner';
+import {LockOptions, NgxPhoneSpinnerOptions} from '@flubs/ngx-phone-spinner';
 
 @Component({
   selector:    'app-root',
@@ -21,15 +21,15 @@ export class AppComponent {
   public title:string = 'NgxBadPhoneSpinner';
   public value:string;
 
-  public badOptions:NgxBadPhoneSpinnerOptions;
-  public badderOptions:NgxBadPhoneSpinnerOptions;
-  public baddestOptions:NgxBadPhoneSpinnerOptions;
-  public fuOptions:NgxBadPhoneSpinnerOptions;
+    public badOptions:NgxPhoneSpinnerOptions;
+  public badderOptions:NgxPhoneSpinnerOptions;
+  public baddestOptions:NgxPhoneSpinnerOptions;
+  public fuOptions:NgxPhoneSpinnerOptions;
 
   constructor() {
-    this.badOptions = new NgxBadPhoneSpinnerOptions();
+    this.badOptions = new NgxPhoneSpinnerOptions();
 
-    this.badderOptions = new NgxBadPhoneSpinnerOptions();
+    this.badderOptions = new NgxPhoneSpinnerOptions();
 
     this.badderOptions.locks = [
       LockOptions.IGNORE,
@@ -41,7 +41,7 @@ export class AppComponent {
       LockOptions.SHUFFLE
     ];
 
-    this.baddestOptions = new NgxBadPhoneSpinnerOptions();
+    this.baddestOptions = new NgxPhoneSpinnerOptions();
 
     this.baddestOptions.locks = [
       LockOptions.IGNORE,
@@ -60,7 +60,7 @@ export class AppComponent {
     this.baddestOptions.shufflesPerClick = 10;
     this.baddestOptions.shuffleMilliseconds = 200;
 
-    this.fuOptions = new NgxBadPhoneSpinnerOptions();
+    this.fuOptions = new NgxPhoneSpinnerOptions();
 
     this.fuOptions.locks = [
       LockOptions.IGNORE,

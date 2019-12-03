@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgxBadPhoneSpinnerModule} from 'ngx-phone-spinner';
+import {NgxPhoneSpinnerModule} from '@flubs/ngx-phone-spinner';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
@@ -12,7 +12,7 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    NgxBadPhoneSpinnerModule,
+    NgxPhoneSpinnerModule,
     ReactiveFormsModule
   ],
   providers: [],
