@@ -1,6 +1,6 @@
 import {LockOptions} from './lock-options.model';
 
-export class NgxBadPhoneSpinnerOptions {
+export class NgxPhoneSpinnerOptions {
   public locks:LockOptions[] = [
     LockOptions.MANUAL
   ];

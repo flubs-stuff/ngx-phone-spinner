@@ -3,21 +3,21 @@ import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
-import {NgxBadPhoneSpinnerComponent} from './ngx-bad-phone-spinner/ngx-bad-phone-spinner.component';
+import {NgxPhoneSpinnerComponent} from './ngx-phone-spinner/ngx-phone-spinner.component';
 import {RangePipe} from './pipes/range.pipe';
 
-export * from './models/ngx-bad-phone-spinner.model';
+export * from './models/ngx-phone-spinner.model';
 export * from './models/lock-options.model';
 
-export * from './ngx-bad-phone-spinner/ngx-bad-phone-spinner.component';
+export * from './ngx-phone-spinner/ngx-phone-spinner.component';
 
 @NgModule({
   declarations: [
-    NgxBadPhoneSpinnerComponent,
+    NgxPhoneSpinnerComponent,
     RangePipe
   ],
   exports: [
-    NgxBadPhoneSpinnerComponent,
+    NgxPhoneSpinnerComponent,
     RangePipe
   ],
   imports: [
@@ -26,10 +26,10 @@ export * from './ngx-bad-phone-spinner/ngx-bad-phone-spinner.component';
   ],
   providers: []
 })
-export class NgxBadPhoneSpinnerModule {
+export class NgxPhoneSpinnerModule {
   static forRoot():ModuleWithProviders {
     return {
-      ngModule: NgxBadPhoneSpinnerModule,
+      ngModule: NgxPhoneSpinnerModule,
       providers: []
     };
   }

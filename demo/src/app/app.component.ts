@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import {LockOptions, NgxBadPhoneSpinnerOptions} from 'ngx-bad-phone-spinner';
+import {LockOptions, NgxBadPhoneSpinnerOptions} from 'ngx-phone-spinner';
 
 @Component({
   selector:    'app-root',

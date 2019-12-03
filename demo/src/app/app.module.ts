@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgxBadPhoneSpinnerModule} from 'ngx-bad-phone-spinner';
+import {NgxBadPhoneSpinnerModule} from 'ngx-phone-spinner';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';

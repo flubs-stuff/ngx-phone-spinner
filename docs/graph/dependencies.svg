@@ -90,15 +90,15 @@
 <path fill="none" stroke="#000000" d="M178.7258,-122.2228C178.7258,-122.2228 178.7258,-143.7269 178.7258,-143.7269"/>
 <polygon fill="#000000" stroke="#000000" points="175.2259,-143.7269 178.7258,-153.7269 182.2259,-143.727 175.2259,-143.7269"/>
 </g>
-<!-- NgxBadPhoneSpinnerComponent  -->
+<!-- NgxPhoneSpinnerComponent  -->
 <g id="node7" class="node">
-<title>NgxBadPhoneSpinnerComponent </title>
+<title>NgxPhoneSpinnerComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="686.0358,-190 475.9642,-190 475.9642,-154 686.0358,-154 686.0358,-190"/>
-<text text-anchor="middle" x="581" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">NgxBadPhoneSpinnerComponent </text>
+<text text-anchor="middle" x="581" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">NgxPhoneSpinnerComponent </text>
 </g>
-<!-- NgxBadPhoneSpinnerModule&#45;&gt;NgxBadPhoneSpinnerComponent  -->
+<!-- NgxBadPhoneSpinnerModule&#45;&gt;NgxPhoneSpinnerComponent  -->
 <g id="edge6" class="edge">
-<title>NgxBadPhoneSpinnerModule&#45;&gt;NgxBadPhoneSpinnerComponent </title>
+<title>NgxBadPhoneSpinnerModule&#45;&gt;NgxPhoneSpinnerComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.427,-108C437.585,-108 581,-108 581,-108 581,-108 581,-143.8314 581,-143.8314"/>
 <polygon fill="#000000" stroke="#000000" points="577.5001,-143.8313 581,-153.8314 584.5001,-143.8314 577.5001,-143.8313"/>
 </g>
@@ -114,15 +114,15 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.2938,-115C379.0967,-115 418,-115 418,-115 418,-115 418,-143.9648 418,-143.9648"/>
 <polygon fill="#000000" stroke="#000000" points="414.5001,-143.9648 418,-153.9648 421.5001,-143.9649 414.5001,-143.9648"/>
 </g>
-<!-- NgxBadPhoneSpinnerComponent -->
+<!-- NgxPhoneSpinnerComponent -->
 <g id="node5" class="node">
-<title>NgxBadPhoneSpinnerComponent</title>
+<title>NgxPhoneSpinnerComponent</title>
 <polygon fill="#ffffb3" stroke="#000000" points="1011.0363,-190 804.9637,-190 804.9637,-154 1011.0363,-154 1011.0363,-190"/>
-<text text-anchor="middle" x="908" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">NgxBadPhoneSpinnerComponent</text>
+<text text-anchor="middle" x="908" y="-167.8" font-family="Times,serif" font-size="14.00" fill="#000000">NgxPhoneSpinnerComponent</text>
 </g>
-<!-- NgxBadPhoneSpinnerComponent&#45;&gt;NgxBadPhoneSpinnerModule -->
+<!-- NgxPhoneSpinnerComponent&#45;&gt;NgxBadPhoneSpinnerModule -->
 <g id="edge4" class="edge">
-<title>NgxBadPhoneSpinnerComponent&#45;&gt;NgxBadPhoneSpinnerModule</title>
+<title>NgxPhoneSpinnerComponent&#45;&gt;NgxBadPhoneSpinnerModule</title>
 <path fill="none" stroke="#000000" d="M908,-153.9092C908,-130.8672 908,-94 908,-94 908,-94 348.3965,-94 348.3965,-94"/>
 <polygon fill="#000000" stroke="#000000" points="348.3966,-90.5001 338.3965,-94 348.3965,-97.5001 348.3966,-90.5001"/>
 </g>

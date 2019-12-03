@@ -1,8 +1,8 @@
-# ngx-bad-phone-spinner
+# @flubs/ngx-phone-spinner
 
-[![npm](https://img.shields.io/npm/l/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner/)
-[![npm](https://img.shields.io/npm/dt/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner)
-[![npm](https://img.shields.io/npm/dm/ngx-bad-phone-spinner.svg)](https://www.npmjs.com/package/ngx-bad-phone-spinner)
+[![npm](https://img.shields.io/npm/l/@flubs/ngx-phone-spinner.svg)](https://www.npmjs.com/package/@flubs/ngx-phone-spinner/)
+[![npm](https://img.shields.io/npm/dt/@flubs/ngx-phone-spinner.svg)](https://www.npmjs.com/package/@flubs/ngx-phone-spinner)
+[![npm](https://img.shields.io/npm/dm/@flubs/ngx-phone-spinner.svg)](https://www.npmjs.com/package/@flubs/ngx-phone-spinner)
 
 ![](example.gif)
 
@@ -18,7 +18,7 @@
 
 This is a bad phone number picker for Angular 2+. 
 
-* Try out [the demo](https://ngx-bad-phone-spinner.jrquick.com) to see it in action!
+* Try out [the demo](https://@flubs/ngx-phone-spinner.jrquick.com) to see it in action!
 * Checkout my other Ionic/Angular projects: [ionic4-tooltips](https://github.com/jrquick17/ionic4-tooltips) and [ionic4-auto-complete](https://github.com/jrquick17/ionic4-auto-complete)!
 * Visit [my website](https://jrquick.com) for other cool projects!
 
@@ -26,7 +26,7 @@ This is a bad phone number picker for Angular 2+.
 
 To install this library (component), run:
 ```bash
-$ npm i ngx-bad-phone-spinner --save
+$ npm i @flubs/ngx-phone-spinner --save
 ```
 
 ## Documentation ##
@@ -39,7 +39,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import this library
-import { NgxBadPhoneSpinnerModule } from 'ngx-bad-phone-spinner';
+import { NgxBadPhoneSpinnerModule } from '@flubs/ngx-phone-spinner';
 
 @NgModule({
   declarations: [
@@ -69,10 +69,10 @@ export class AppComponent {
 ```
 
 ```html
-<ngx-bad-phone-spinner
+<@flubs/ngx-phone-spinner
     [number]="mobile"
     (change)="change($event)">
-</ngx-bad-phone-spinner>
+</@flubs/ngx-phone-spinner>
 ```
 
 --------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ export class AppComponent {
 
 ## Issues ##
 
-If you find any issues feel free to open a request in [the Issues tab](https://github.com/jrquick17/ngx-bad-phone-spinner/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
+If you find any issues feel free to open a request in [the Issues tab](https://github.com/jrquick17/@flubs/ngx-phone-spinner/issues). If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.
 
 ### Demo ###
 

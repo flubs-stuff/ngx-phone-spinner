@@ -2,23 +2,23 @@ import {Component, EventEmitter, forwardRef, Input, Output} from '@angular/core'
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 import {LockOptions} from '../models/lock-options.model';
-import {NgxBadPhoneSpinnerOptions} from '../models/ngx-bad-phone-spinner.model';
+import {NgxPhoneSpinnerOptions} from '../models/ngx-phone-spinner.model';
 
 @Component({
-  selector:    'ngx-bad-phone-spinner',
-  templateUrl: './ngx-bad-phone-spinner.component.html',
+  selector:    'ngx-phone-spinner',
+  templateUrl: './ngx-phone-spinner.component.html',
   styleUrls: [
-    './ngx-bad-phone-spinner.component.scss'
+    './ngx-phone-spinner.component.scss'
   ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NgxBadPhoneSpinnerComponent),
+      useExisting: forwardRef(() => NgxPhoneSpinnerComponent),
       multi: true
     }
   ]
 })
-export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
+export class NgxPhoneSpinnerComponent implements ControlValueAccessor {
   private _onTouched:() => void;
   private _propagateChange:any = () => {};
 
@@ -31,7 +31,7 @@ export class NgxBadPhoneSpinnerComponent implements ControlValueAccessor {
   public disabled:boolean = false;
   public isRandomizing:boolean = false;
 
-  @Input() options:NgxBadPhoneSpinnerOptions = new NgxBadPhoneSpinnerOptions();
+  @Input() options:NgxPhoneSpinnerOptions = new NgxPhoneSpinnerOptions();
 
   @Input()
   set number(digits:string) {

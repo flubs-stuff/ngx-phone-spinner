@@ -37,7 +37,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/ngx-bad-phone-spinner/assets/",
+                "input": "node_modules/@flubs/ngx-phone-spinner/assets/",
                 "output": "./assets/"
               },
               "src/manifest.json"
