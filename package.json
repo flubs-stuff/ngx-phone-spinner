@@ -3,45 +3,52 @@
   "version": "1.1.3",
   "readme": "README.md",
   "scripts": {
-    "build": "ng-packagr -p package.json --project projects/ngx-bad-phone-spinner && cp README.md dist/ngx-bad-phone-spinner/README.md",
-    "demo": "ng serve",
+    "build": "ng-packagr -p package.json && cp src/ngx-bad-phone-spinner/ngx-bad-phone-spinner.component.scss dist/ngx-bad-phone-spinner.scss && cp -r src/assets dist/assets",
+    "demo": "npm run demo",
+    "demo:build": "npm run build && cd demo && cp -fr ../dist/* node_modules/ionic4-ngx-bad-phone-spinner/ && cd ..",
+    "demo:run": "npm run demo:build && npm run demo",
     "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n ionic4-auto-complete -d docs --hideGenerator",
+    "docs:build": "compodoc -p tsconfig.json -n ionic4-ngx-bad-phone-spinner -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "publish": "npm publish dist",
     "run:demo": "cd demo && ionic serve",
-    "shipit": "npm run lint && npm run test && npm run build && npm run docs:build && npm run publish",
+    "shipit": "npm run lint && npm run test && npm run build:demo && npm run docs:build && npm run publish",
     "test": "tsc && karma start"
   },
   "private": false,
-  "dependencies": {
-    "@angular/animations": "^8.2.14",
-    "@angular/cdk": "^8.2.3",
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/material": "^8.2.3",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/router": "^8.2.14",
-    "core-js": "^3.4.7",
-    "rxjs": "~6.5.3",
-    "zone.js": "~0.9.1"
+  "ngPackage": {
+    "lib": {
+      "cssUrl": "inline",
+      "entryFile": "src/index.ts",
+      "styleIncludePaths": [
+        "./src/scss"
+      ]
+    }
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.20",
     "@angular-devkit/build-ng-packagr": "^0.803.20",
+    "@angular/animations": "^8.2.14",
+    "@angular/cdk": "^8.2.3",
     "@angular/cli": "^8.3.20",
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
     "@angular/compiler-cli": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/forms": "^8.2.14",
     "@angular/language-service": "^8.2.14",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "^8.2.14",
+    "@angular/platform-browser-dynamic": "^8.2.14",
+    "@angular/router": "^8.2.14",
     "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "~12.12.14",
     "codelyzer": "~5.2.0",
+    "core-js": "^3.4.7",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.4.1",
@@ -51,10 +58,21 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "ng-packagr": "^5.7.1",
     "protractor": "~5.4.2",
+    "rxjs": "~6.5.3",
     "ts-node": "~8.5.4",
     "tsickle": "^0.37.1",
     "tslib": "^1.10.0",
     "tslint": "~5.20.1",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "zone.js": "~0.9.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/forms": "^8.2.14",
+    "zone.js": "~0.9.1"
   }
 }

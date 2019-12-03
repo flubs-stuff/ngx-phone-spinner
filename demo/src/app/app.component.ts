@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {LockOptions, NgxBadPhoneSpinnerOptions} from 'ngx-bad-phone-spinner';
 
 @Component({
-  selector:    'demo-root',
+  selector:    'app-root',
   templateUrl: './app.component.html',
   styleUrls: [
     './app.component.scss'
