@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ionic4-ngx-bad-phone-spinner</title>
+        <title>ionic4-ngx-phone-spinner</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ionic4-ngx-bad-phone-spinner</a>
+            <a href="./" class="navbar-brand">ionic4-ngx-phone-spinner</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -30,10 +30,10 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="ngx-bad-phone-spinner">ngx-bad-phone-spinner</h1>
-<p><a href="https://www.npmjs.com/package/ngx-bad-phone-spinner/"><img src="https://img.shields.io/npm/l/ngx-bad-phone-spinner.svg" alt="npm" class="img-responsive"></a>
-<a href="https://www.npmjs.com/package/ngx-bad-phone-spinner"><img src="https://img.shields.io/npm/dt/ngx-bad-phone-spinner.svg" alt="npm" class="img-responsive"></a>
-<a href="https://www.npmjs.com/package/ngx-bad-phone-spinner"><img src="https://img.shields.io/npm/dm/ngx-bad-phone-spinner.svg" alt="npm" class="img-responsive"></a></p>
+<h1 id="flubsngx-phone-spinner">@flubs/ngx-phone-spinner</h1>
+<p><a href="https://www.npmjs.com/package/@flubs/ngx-phone-spinner/"><img src="https://img.shields.io/npm/l/@flubs/ngx-phone-spinner.svg" alt="npm" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/@flubs/ngx-phone-spinner"><img src="https://img.shields.io/npm/dt/@flubs/ngx-phone-spinner.svg" alt="npm" class="img-responsive"></a>
+<a href="https://www.npmjs.com/package/@flubs/ngx-phone-spinner"><img src="https://img.shields.io/npm/dm/@flubs/ngx-phone-spinner.svg" alt="npm" class="img-responsive"></a></p>
 <p><img src="example.gif" alt="" class="img-responsive"></p>
 <h2 id="index">Index</h2>
 <ul>
@@ -46,13 +46,13 @@
 <h2 id="about">About</h2>
 <p>This is a bad phone number picker for Angular 2+. </p>
 <ul>
-<li>Try out <a href="https://ngx-bad-phone-spinner.jrquick.com">the demo</a> to see it in action!</li>
+<li>Try out <a href="https://@flubs/ngx-phone-spinner.jrquick.com">the demo</a> to see it in action!</li>
 <li>Checkout my other Ionic/Angular projects: <a href="https://github.com/jrquick17/ionic4-tooltips">ionic4-tooltips</a> and <a href="https://github.com/jrquick17/ionic4-auto-complete">ionic4-auto-complete</a>!</li>
 <li>Visit <a href="https://jrquick.com">my website</a> for other cool projects!</li>
 </ul>
 <h2 id="setup">Setup</h2>
 <p>To install this library (component), run:</p>
-<div><pre class="line-numbers"><code class="language-bash">$ npm i ngx-bad-phone-spinner --save</code></pre></div><h2 id="documentation">Documentation</h2>
+<div><pre class="line-numbers"><code class="language-bash">$ npm i &#64;flubs/ngx-phone-spinner --save</code></pre></div><h2 id="documentation">Documentation</h2>
 <p>Add NumberPickerModule to <code>AppModule</code></p>
 <div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
 import { NgModule } from &#39;&#64;angular/core&#39;;
@@ -60,7 +60,7 @@ import { NgModule } from &#39;&#64;angular/core&#39;;
 import { AppComponent } from &#39;./app.component&#39;;
 
 // Import this library
-import { NgxBadPhoneSpinnerModule } from &#39;ngx-bad-phone-spinner&#39;;
+import { NgxBadPhoneSpinnerModule } from &#39;&#64;flubs/ngx-phone-spinner&#39;;
 
 &#64;NgModule({
   declarations: [
@@ -81,10 +81,10 @@ export class AppModule { }</code></pre></div><p>Once this library is imported, y
     change(value: number): void {
         console.log(value);
     }
-}</code></pre></div><div><pre class="line-numbers"><code class="language-html">&lt;ngx-bad-phone-spinner
+}</code></pre></div><div><pre class="line-numbers"><code class="language-html">&lt;&#64;flubs/ngx-phone-spinner
     [number]=&quot;mobile&quot;
     (change)=&quot;change($event)&quot;&gt;
-&lt;/ngx-bad-phone-spinner&gt;</code></pre></div><hr>
+&lt;/&#64;flubs/ngx-phone-spinner&gt;</code></pre></div><hr>
 <h3 id="component-inputs-and-outputs">Component Inputs and Outputs</h3>
 <table class="table table-bordered compodoc-table">
 <thead>
@@ -115,7 +115,7 @@ export class AppModule { }</code></pre></div><p>Once this library is imported, y
 </table>
 <hr>
 <h2 id="issues">Issues</h2>
-<p>If you find any issues feel free to open a request in <a href="https://github.com/jrquick17/ngx-bad-phone-spinner/issues">the Issues tab</a>. If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.</p>
+<p>If you find any issues feel free to open a request in <a href="https://github.com/jrquick17/@flubs/ngx-phone-spinner/issues">the Issues tab</a>. If I have the time I will try to solve any issues but cannot make any guarantees. Feel free to contribute yourself.</p>
 <h3 id="demo">Demo</h3>
 <p>Run <code>npm install</code> to get packages required for the demo and then run <code>ionic serve</code> to run locally.</p>
 <h3 id="thanks">Thanks</h3>
